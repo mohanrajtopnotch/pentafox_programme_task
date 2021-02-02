@@ -1,0 +1,96 @@
+Anagram:
+
+var a = "source";
+a = a.toLowerCase();
+var b = "ecruos";
+b = b.toLowerCase();
+revB=b.split("");
+revB=revB.reverse();
+revB=revB.join("");
+a==revB?"Anagram":"Not Anagram"
+
+
+
+***********************Sum of Prime Numbers**************************
+
+
+
+function isPrime(number) {
+    var start = 2;
+    while (start <= Math.sqrt(number)) {
+        if (number % start++ < 1) return false;
+    }
+    return number > 1;
+}
+function sumPrimes(num) {
+  var total = 0;
+  var primes =[]; 
+  for(var i = 2; i<=num; i++){
+    if(isPrime(i)){
+       total = total + i; 
+       }
+  }
+  return total;
+}
+sumPrimes(10);
+
+
+
+
+***********************Array to Object**********************
+
+
+
+
+var input=["test", "name", 45, "anything", true, 78]
+var arrString=[];
+var arrNumber=[];
+var arrBoolean=[];
+for(var i=0;i<input.length;i++){
+    var a=typeof input[i];
+    if(a=="string"){
+        arrString.push(input[i]);    
+    }
+    else if(a=="number"){
+        arrNumber.push(input[i]);
+    }
+    else if(a=="boolean"){
+        arrBoolean.push(input[i]);
+    }
+}
+var Result={
+    "Strings":arrString,
+    "Numbers":arrNumber,
+    "Boolean":arrBoolean
+}
+
+
+
+
+
+*************Encryption Program*********************8
+
+
+
+
+
+var message="Hi awesome!"
+var splitMessage=message.split(" ");var Res=[];
+for(var i=0;i<splitMessage.length;i++){
+    for(var j=0;j<splitMessage[i].length;j++){
+        
+        if(j!=0){
+            for(var k=0;k<alphabetArr.length;k++){
+                if(splitMessage[i][j]==alphabetArr[k]){
+                   Res.push("#"+k+1);
+                }
+            }
+        }
+        else{
+            Res.push(splitMessage[i][j]);
+        }
+    }
+    Res.push("_")
+}
+Res.pop()
+Res.join("")
